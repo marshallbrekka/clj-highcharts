@@ -1,5 +1,3 @@
-
-
 (ns clj-highcharts.core
   (:require [cheshire.core :as json])
   (:import java.io.ByteArrayOutputStream
