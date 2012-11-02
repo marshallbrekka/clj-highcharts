@@ -4,7 +4,7 @@
 
 (json/add-encoder clj_highcharts.fn.JsFn
   (fn [s jg]
-    (.writeString jg (:script s))))
+    (.writeRawValue jg (:script s))))
 
 (defn encode [clj]
   (json/encode* clj))
