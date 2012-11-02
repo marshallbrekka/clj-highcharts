@@ -1,4 +1,4 @@
-(defproject clj-highcharts "0.1.1"
+(defproject clj-highcharts "0.1.2"
   :description "A clojure wrapper for highcharts."
   :url "https://github.com/marshallbrekka/clj-highcharts"
   :dependencies [[org.clojure/clojure "1.4.0"]

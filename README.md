@@ -20,6 +20,6 @@ A clojure wrapper for highcharts, using the one2team highcharts server exporter.
    :title "made with clj-highcharts"
    :series [{:data [[0 10] [1 30] [2 40] [3 25]]}]})
 
-(def svg (get-svg my-chart))
+(def svg (clj->svg my-chart))
 (spit "my-graph.svg" svg)
 ```
