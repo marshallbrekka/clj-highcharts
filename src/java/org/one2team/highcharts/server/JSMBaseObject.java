@@ -40,7 +40,7 @@ public class JSMBaseObject implements Scriptable, Jsonify {
 
   @XmlTransient
   public Object innerHTML;
-  
+
   @XmlTransient
   public Object userObject;
 
@@ -168,7 +168,7 @@ public class JSMBaseObject implements Scriptable, Jsonify {
 	@Override
 	public void setPrototype (Scriptable prototype) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -180,7 +180,7 @@ public class JSMBaseObject implements Scriptable, Jsonify {
 	@Override
 	public void setParentScope (Scriptable parent) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -190,7 +190,7 @@ public class JSMBaseObject implements Scriptable, Jsonify {
 	}
 
 	@Override
-	public Object getDefaultValue (Class<?> hint) {
+	public Object getDefaultValue (java.lang.Class hint) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -208,21 +208,21 @@ public class JSMBaseObject implements Scriptable, Jsonify {
 
 	private Field getPropertyField (String property) {
 		final Class<? extends JSMBaseObject> class1 = getClass ();
-		
+
 		final Field field = BeansDescriptor.singleton ().getField (class1, property);
 		return field;
 	}
 
 	private Method getPropertyGetter (String property) {
 		final Class<? extends JSMBaseObject> class1 = getClass ();
-		
+
 		final Method getter = BeansDescriptor.singleton ().getGetter (class1, property);
 		return getter;
 	}
 
 	private Method getPropertySetter (String property) {
 		final Class<? extends JSMBaseObject> class1 = getClass ();
-		
+
 		final Method setter = BeansDescriptor.singleton ().getSetter (class1, property);
 //		// System.out.println("setter<"+class1+";"+property+";"+setter);
 		return setter;

@@ -23,7 +23,7 @@ public class JSMArray<E> extends ArrayList<E> implements Array<E>, Scriptable {
   public JSMArray () {
 //    list = new ArrayList<E> ();
   }
-  
+
   @Override
   public E getItem (int index) {
     return get (index);
@@ -117,23 +117,23 @@ public class JSMArray<E> extends ArrayList<E> implements Array<E>, Scriptable {
 
 	@Override
 	public void put (String name, Scriptable start, Object value) {
-		
+
 	}
 
 	@Override
 	public void put (int index, Scriptable start, Object value) {
 		// System.out.println("put {length:"+length ()+"} ["+index+"]");
-		
+
 	}
 
 	@Override
 	public void delete (String name) {
-		
+
 	}
 
 	@Override
 	public void delete (int index) {
-		
+
 	}
 
 	@Override
@@ -143,7 +143,7 @@ public class JSMArray<E> extends ArrayList<E> implements Array<E>, Scriptable {
 
 	@Override
 	public void setPrototype (Scriptable prototype) {
-		
+
 	}
 
 	@Override
@@ -166,7 +166,7 @@ public class JSMArray<E> extends ArrayList<E> implements Array<E>, Scriptable {
 	}
 
 	@Override
-	public Object getDefaultValue (Class<?> hint) {
+	public Object getDefaultValue (java.lang.Class hint) {
 		return null;
 	}
 
