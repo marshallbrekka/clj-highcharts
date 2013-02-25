@@ -1,27 +1,17 @@
 (ns clj-highcharts.core
   (:require [clj-highcharts.json :as json]
-            [clj-highcharts.fn :as i-fn])
+            [clj-highcharts.fn :as i-fn]
+            [clj-highcharts.executer :as executer])
   (:import java.io.ByteArrayOutputStream
            java.io.StringReader
            [org.apache.batik.transcoder.image JPEGTranscoder PNGTranscoder TIFFTranscoder]
-           [org.apache.batik.transcoder TranscoderInput TranscoderOutput]
-           org.marshallbrekka.highcharts.server.export.HighchartsSVGExporter
-           org.one2team.highcharts.server.export.util.SVGRendererInternalJson))
-
-(defn get-svg-output-stream [output-stream ^String json-options]
-  (-> (SVGRendererInternalJson.)
-      (HighchartsSVGExporter.)
-      (.render json-options
-               nil
-               output-stream)))
+           [org.apache.batik.transcoder TranscoderInput TranscoderOutput]))
 
 (defn js-fn [^String function]
   (i-fn/js-fn function))
 
 (defn json->svg [^String options]
-  (-> (ByteArrayOutputStream.)
-      (get-svg-output-stream options)
-      (.toString)))
+  (executer/make-svg options))
 
 (defn clj->svg [^clojure.lang.IPersistentMap options]
   (-> (json/encode options)
